@@ -36,6 +36,8 @@
 
 using namespace std;
 
+std::string js_getline(); // wasm/glue.cpp
+
 namespace Stockfish {
 
 extern vector<string> setup_bench(const Position&, istream&);
@@ -324,8 +326,7 @@ void UCI::loop(int argc, char* argv[]) {
   }
 
   do {
-      if (argc == 1 && !getline(cin, cmd)) // Block here waiting for input or EOF
-          cmd = "quit";
+      cmd = js_getline();
 
       istringstream is(cmd);
 
@@ -416,7 +417,7 @@ void UCI::loop(int argc, char* argv[]) {
       else if (!token.empty() && token[0] != '#')
           sync_cout << "Unknown command: " << cmd << sync_endl;
 
-  } while (token != "quit" && argc == 1); // Command line args are one-shot
+  } while (token != "quit"); // Command line args are one-shot
 }
 
 

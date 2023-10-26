@@ -77,6 +77,8 @@ namespace Eval {
   void NNUE::init() {
 
     useNNUE = Options["Use NNUE"];
+    return;
+
     if (!useNNUE)
         return;
 
@@ -140,6 +142,8 @@ namespace Eval {
   /// NNUE::verify() verifies that the last net used was loaded successfully
   void NNUE::verify() {
 
+    return;
+    
     string eval_file = string(Options["EvalFile"]);
 
     if (useNNUE && eval_file.find(eval_file_loaded) == string::npos)

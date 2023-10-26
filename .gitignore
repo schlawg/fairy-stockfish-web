@@ -28,3 +28,12 @@ pyffish.egg-info
 # IDEs
 .vscode
 .idea
+
+
+# fairyStockfish-web stuff
+fairyStockfishWeb.js
+fairyStockfishWeb.wasm
+fairyStockfishWeb.worker.js
+.metals/
+.DS_Store
+*.code-workspace

@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 
   pieceMap.init();
   variants.init();
-  CommandLine::init(argc, argv);
+  //CommandLine::init(argc, argv);
   UCI::init(Options);
   Tune::init();
   PSQT::init(variants.find(Options["UCI_Variant"])->second);
